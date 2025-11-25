@@ -114,11 +114,13 @@ body {
 }
 
 .alarm-set {
-    width: 25px;
-    height: 50px;
+    width: 100px;
+    height: 75px;
 }
 
 .alarm-set > input {
+    width: 100px;
+    height: 100px;
     border: none;
     outline: none;
     background-color: gray;
