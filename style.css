@@ -70,14 +70,17 @@ body {
 }
 
 .container {
-    height: 200px;
-    width: 400px;
-    padding-top: 50px;
-    justify-content: center;
+    display: flex;
+    height: 300px;
+    width: 600px;
+    padding-top: 20px;
+    justify-content: space-around;
+    flex-direction: column;
     text-align: center;
     position: absolute;
     top: 50%;
     left: 50%;
+    overflow: hidden;
     transform: translate(-50%, -50%);
     background-color: #3f4242;
     border-radius: 20px;
@@ -91,21 +94,61 @@ body {
     -o-transform: translate(-50%, -50%);
 }
 
+.realtime {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    padding: 0 40px;
+}
+
+.alarm {
+    margin-top: 10px;
+    padding: 30px 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.alarm-activated {
+    display: flex;
+    justify-content: space-around;
+}
+
+.alarm-set {
+    width: 25px;
+    height: 50px;
+}
+
+.alarm-set > input {
+    border: none;
+    outline: none;
+    background-color: gray;
+    border-radius: 30px;
+}
+
+.alarm-button {
+
+}
+
+.alarm-button > input {
+    border: none;
+    outline: none;
+}
+
 .reset-btn {
     margin-left: 10px;
     width: 100px;
     height: 40px;
-    border-radius: 10px;
     background-color: var(--button-background);
     font-family: var(--text-title);
     font-size: medium;
     color: black;
     border: none;
     cursor: pointer;
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
-    -ms-border-radius: 10px;
-    -o-border-radius: 10px;
+    border-radius: 40px;
+    -webkit-border-radius: 40px;
+    -moz-border-radius: 40px;
+    -ms-border-radius: 40px;
+    -o-border-radius: 40px;
     transition: all 0.3s ease-in-out;
     -webkit-transition: all 0.3s ease-in-out;
     -moz-transition: all 0.3s ease-in-out;
@@ -121,73 +164,4 @@ body {
     -moz-transform: scale(1.1);
     -ms-transform: scale(1.1);
     -o-transform: scale(1.1);
-}
-
-input {
-    border-radius: 16px;
-    -webkit-border-radius: 16px;
-    -moz-border-radius: 16px;
-    -ms-border-radius: 16px;
-    -o-border-radius: 16px;
-}
-
-.alarm-button input {
-    display: none;
-}
-
-.alarm-button {
-    width: 100px;
-    height: 100px;
-    position: relative;
-    display: inline-block;
-}
-
-.alarm-button .konten {
-    border: 2px solid white;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    border-radius: 50px;
-    -webkit-border-radius: 50px;
-    -moz-border-radius: 50px;
-    -ms-border-radius: 50px;
-    -o-border-radius: 50px;
-    transition: all 0.2s ease-in-out;
-    -webkit-transition: all 0.2s ease-in-out;
-    -moz-transition: all 0.2s ease-in-out;
-    -ms-transition: all 0.2s ease-in-out;
-    -o-transition: all 0.2s ease-in-out;
-}
-
-.alarm-button .konten::before {
-    background-color: black;
-    position: absolute;
-    content: '';
-    width: 30px;
-    height: 30px;
-    border-radius: 50px;
-    -webkit-border-radius: 50px;
-    -moz-border-radius: 50px;
-    -ms-border-radius: 50px;
-    -o-border-radius: 50px;
-    transition: all 0.2s ease-in-out;
-    -webkit-transition: all 0.2s ease-in-out;
-    -moz-transition: all 0.2s ease-in-out;
-    -ms-transition: all 0.2s ease-in-out;
-    -o-transition: all 0.2s ease-in-out;
-    left: 3px;
-}
-
-.alarm-button input:checked + .konten {
-    background-color: black;
-    border: 2px solid white;
-}
-
-.alarm-button input:checked+ .konten::before {
-    background-color: white;
-    transform: translate(65px);
-    -webkit-transform: translate(65px);
-    -moz-transform: translate(65px);
-    -ms-transform: translate(65px);
-    -o-transform: translate(65px);
 }
