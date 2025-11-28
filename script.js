@@ -80,12 +80,11 @@ function toggleAlarm() {
             return;
         }
 
-        if (toggle.checked) {
-            alert("Alarm active");
+        if (toggle.checked) {;
             AlarmActive = true;
-        } else {
-            alert("Alarm belum active");
+        } else {;
             AlarmActive = false;
+            nihAudio.pause();
         }
     })
 
