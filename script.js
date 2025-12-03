@@ -57,27 +57,23 @@ function setAlarm() {
 }
 
 function setLagu() {
-    // Read selected option and configure the single audio element
     const pilihanLagu = document.getElementById('sound-set');
     const value = pilihanLagu.value || '';
 
     if (!value) {
-        // no selection -> stop and clear source
         alarmAudio.pause();
         alarmAudio.src = '';
         return alarmAudio;
     }
 
-    // set the audio source (assumes file is in same folder or URL)
     if (alarmAudio.src !== value) {
         alarmAudio.src = value;
     }
 
-    // configure audio behaviour (don't auto-play just because selection changed)
     alarmAudio.loop = true;
     alarmAudio.preload = 'auto';
 
-    return alarmAudio; // caller can call .play(), .pause(), or reset currentTime
+    return alarmAudio; 
 }
 
 function checkAlarm() {
@@ -140,7 +136,6 @@ function deleteAlarm() {
 
         reset.addEventListener("click", function() {
         alert("reset alarm berhasil");
-        // stop audio and reset position
         alarmAudio.pause();
         alarmAudio.currentTime = 0;
         input.value = "";
